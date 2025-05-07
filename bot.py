@@ -15,7 +15,7 @@ intents.message_content = True
 intents.guilds = True
 intents.members = True
 
-bot = commands.Bot(command_prefix='!', intents=intents)
+bot = commands.Bot(command_prefix='c!', intents=intents)
 bot.help_command = None
 
 message_counter = 0
@@ -66,7 +66,7 @@ async def on_ready():
     print(f'Logged in as {bot.user.name}')
     
     # Set the bot's activity (e.g., "Playing with code")
-    activity = discord.Game(name="!help")
+    activity = discord.Game(name="c!help")
     await bot.change_presence(status=discord.Status.online, activity=activity)
 
 # Message tracking
@@ -275,13 +275,13 @@ async def help(ctx):
         description="List of available commands:",
         color=discord.Color.teal()
     )
-    embed.add_field(name="!catch", value="Catch a creature.", inline=False)
-    embed.add_field(name="!balance", value="Check your coin balance.", inline=False)
-    embed.add_field(name="!collection", value="See your caught creatures.", inline=False)
-    embed.add_field(name="!give @user <amount>", value="Give coins to another player.", inline=False)
-    embed.add_field(name="!leaderboard", value="See the global top players.", inline=False)
-    embed.add_field(name="!setspawnchannel", value="(Admin) Set creature spawn channel.", inline=False)
-    embed.add_field(name="!help", value="Show this help message.", inline=False)
+    embed.add_field(name="c!catch", value="Catch a creature.", inline=False)
+    embed.add_field(name="c!balance", value="Check your coin balance.", inline=False)
+    embed.add_field(name="c!collection", value="See your caught creatures.", inline=False)
+    embed.add_field(name="c!give @user <amount>", value="Give coins to another player.", inline=False)
+    embed.add_field(name="c!leaderboard", value="See the global top players.", inline=False)
+    embed.add_field(name="c!setspawnchannel", value="(Admin) Set creature spawn channel.", inline=False)
+    embed.add_field(name="c!help", value="Show this help message.", inline=False)
     await ctx.send(embed=embed)
 
 webserver.keep_alive()
